@@ -44,24 +44,58 @@
 
 function calcular(tipoalimento) {
    var tempodesejado = document.calcform.tempodesejado.value;
-   if (tipoalimento == "pipoca") {
-      if(tempodesejado >= 20){
+   if (tipoalimento == "1") {
+      if (tempodesejado >= 30){
+         var res = "Kabumm";
+      }else if(tempodesejado >= 20){
          var res = "Alimento Queimou";
       }else if(tempodesejado < 10){
          var res = "Tempo Insuficiente";
+      }else{
+         var res = "Prato pronto, bom apetite!!!";
       }
-   } else if (tipoalimento == "macarrao") {
-      tempoalimento = 8;
-      var res = tempodesejado;
-   } else if (tipoalimento == "carne") {
-      tempoalimento = 15;
-      var res = tempodesejado;
-   } else if (tipoalimento == "feijao"){
-      tempoalimento = 12;
-      var res = tempodesejado;
+   } else if (tipoalimento == "2") {
+      if (tempodesejado >= 24){
+         var res = "Kabumm";
+      }else if(tempodesejado >= 16){
+         var res = "Alimento Queimou";
+      }else if(tempodesejado < 8){
+         var res = "Tempo Insuficiente";
+      }else{
+         var res = "Prato pronto, bom apetite!!!";
+      }
+   } else if (tipoalimento == "3") {
+      if (tempodesejado >= 45){
+         var res = "Kabumm";
+      }else if(tempodesejado >= 30){
+         var res = "Alimento Queimou";
+      }else if(tempodesejado < 15){
+         var res = "Tempo Insuficiente";
+      }else{
+         var res = "Prato pronto, bom apetite!!!";
+      }
+   } else if (tipoalimento == "4"){
+      if (tempodesejado >= 36){
+         var res = "Kabumm";
+      }else if(tempodesejado >= 24){
+         var res = "Alimento Queimou";
+      }else if(tempodesejado < 12){
+         var res = "Tempo Insuficiente";
+      }else{
+         var res = "Prato pronto, bom apetite!!!";
+      }
+   }else if (tipoalimento == "5"){
+      if (tempodesejado >= 24){
+         var res = "Kabumm";
+      }else if(tempodesejado >= 16){
+         var res = "Alimento Queimou";
+      }else if(tempodesejado < 8){
+         var res = "Tempo Insuficiente";
+      }else{
+         var res = "Prato pronto, bom apetite!!!";
+      }
    }else {
-      tempoalimento = 8;
-      var res = tempodesejado;
+      var res = "Prato inexistente";
    }
 
    document.calcform.res.value = res;
@@ -82,26 +116,18 @@ function calcular(tipoalimento) {
     <form name="calcform" method="post" action="">
         <fieldset>
            <legend>Microondas</legend>
-
-           <label for="tipoalimento">Selecione a comida desejada  </label>
-           <select name="tipoalimento" id="tipoalimento">
-              <option value="pipoca">Pipoca</option>
-              <option value="macarrao">Macarrão</option>
-              <option value="carne">Carne</option>
-              <option value="feijao">Feijão</option>
-              <option value="brigadeiro">Brigadeiro</option>
-           </select>
-     
+           
+           <label for="tipoalimento">  /  Digite o codigo do alimento desejado:</label>
+           <input type="text" name="tipoalimento" id="tipoalimento" />
      
            <label for="tempodesejado">  /  Digite o  <strong>tempo desejado</strong>:</label>
            <input type="text" name="tempodesejado" id="tempodesejado" />
      
+           <input type="button" value="Ligar Microondas" class="botao" onClick="calcular(document.calcform.tipoalimento.value)"/>
+
            <label for="res">Resultado:</label>
            <input type="text" name="res" id="res" />
-     
-           <input type="button" value="Calcular" class="botao" onClick="calcular(document.calcform.tipoalimento.value)"/>
         </fieldset>
      </form>
-     
     </body>
     </html>
