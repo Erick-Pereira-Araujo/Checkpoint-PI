@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<head>
+   <title>Calculadora</title>
+
+<script type="text/javascript" src="https://me.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=nNatHveXT0LbElW20SWI8MMAyZ9j6sD5V6dg_2lVs8xFBqhm1_FDDh0OCP7RANFQoC3ZJ3VTnNNlJddOAnjL2uLq4eP-xwdtXd5ndPOpz6YQnbWq7H8iAHK6qHSPlPh-zBa_56XKJ26MNMhInm7d-gZ88fQXQUC_Arij79_Kgv0bF0bstMOiftuOA-ltV19LiDUZk0DZKyq4k-DbgdlDQileeg6yMBaW9ONt6L6T1U3I3RsrWYNvObmBk7ZqLEkRBbmj81WtnNIYSiLopMoQGMrpouMDiBwnKIdq4CgOvSXTNADjUc3_YdjpZDKgS5w_Qc2IaAqNKyAcvMeY0zHSsmhzBKQsgGhcqvSLVR11zMpUnTuM-UvaJ8acmsj7TENHtrLWVlUc-_3fOG21bjE-zXeWiVFufbp44cwn4xd7dq3FIqhawh1zIgrPvalStRg0G8ZyReseNsdTl5G5-cWMpw" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://me.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9kb2MtMHMtNWstZG9jcy5nb29nbGV1c2VyY29udGVudC5jb20vZG9jcy9zZWN1cmVzYy9vNGtzM2I1aHBlYWYwZ2UwcmRna2s4MDJoZnB0OTQ0ZC84ZDRvZDl0MnU4ZmkwdmdqYmY5aTVmcWI0MGNxdjk1My8xNjI5MzM3MzUwMDAwLzAwMDg3NTMyNzkwNTk4NzAzNzMwLzA1ODc1ODQ4MjY5Mzg4NzIwMzMzLzFDYjdQVXR6SlFfTEJMTGZyU05MdktoZW55UzJVN2w1Vj9lPWRvd25sb2FkJmF1dGh1c2VyPTAmbm9uY2U9djE1Z3UybWxyb2MzbSZ1c2VyPTA1ODc1ODQ4MjY5Mzg4NzIwMzMzJmhhc2g9bzVmbG85OHQ0OGw0NjR1YmdsZ2g4ODQxc2VvczVyamE"/><style type="text.css">
+
+        form fieldset {
+        margin: 10px auto 10px auto;
+        width: 40%;
+        border: solid black 1px;
+        padding: 3%;
+     }
+     
+     form legend {
+        padding: 6px;
+        margin: 10px;
+        border: solid black 1px;
+        font-size: 90%;
+        font-weight: bold;
+        background-color: #e8e8e8;
+     }
+     
+     form label {
+        display: block;
+        font-size: 11px;
+     }
+     
+     form input {
+        width: 100%;
+        border: solid #ccc 1px;
+        font-size: 11px;
+        margin-bottom: 10px;
+     }
+     
+     form input.botao {
+        display: block;
+        width: auto;
+        float: right;
+     }
+</style>
+
+<script type="text/javascript">
+
+function calcular(oper) {
+   var valor1 = document.calcform.valor1.value;
+   var valor2 = document.calcform.valor2.value;
+
+   if (oper == "somar") {
+      var res = parseInt(valor1) + parseInt(valor2);
+   } else {
+      if (oper == "subtrair") {
+         var res = valor1-valor2;
+      } else {
+         if (oper == "multiplicar") {
+            var res = valor1*valor2;
+         } else {
+            var res = valor1/valor2;
+         }
+      }
+   }
+
+   document.calcform.res.value = res;
+}
+</script>
+
+</head>
+<body>
+    <form name="calcform" method="post" action="">
+        <fieldset>
+           <legend>Calculadora </legend>
+     
+           <label for="valor1">Digite o valor <strong>1</strong>:</label>
+           <input type="text" name="valor1" id="valor1" />
+     
+           <label for="valor2">Digite o valor <strong>2</strong>:</label>
+           <input type="text" name="valor2" id="valor2" />
+     
+           <label for="oper">Selecione a operação:</label>
+           <select name="oper" id="oper">
+              <option value="somar">Somar</option>
+              <option value="subtrair">Subtrair</option>
+              <option value="multiplicar">Multiplifcar</option>
+              <option value="dividir">Dividir</option>
+           </select>
+     
+           <label for="res">Resultado:</label>
+           <input type="text" name="res" id="res" />
+     
+           <input type="button" value="Calcular" class="botao" onClick="calcular(document.calcform.oper.value)"/>
+        </fieldset>
+     </form>
+     
+    </body>
+    </html>

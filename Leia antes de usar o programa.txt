@@ -1,0 +1,10 @@
+Este programa foi feito usando como base o codigo de um dos meus colegas de turma, nome Aislan Munin
+Utilizei do codigo que ele fez para a atividade da "calculadora" e fiz as modificações ncessárias para o programa se adequar ao que foi solitado no problema
+caso queria ver as diferenças entre os codigos do meu programa e o dele basta selecionar o arquivo "calculadora.html" que este é o arquivo original que peguei com ele.
+
+Para utilizar o programa basta digitar o codigo do alimento desejado, o programa não funciona caso selecione um codigo que não existe
+ou seja caso selecione um numero que não está no intervalo de 1 a 5, tambem não funciona colocando o nome direto do alimento
+até poderia ter colocado para reconhecer as palavras referentes a cada alimento mas não acho que sej aneccessário visto que o objetivo do exercicio já foi cumprido
+
+Após selecionar o tipo de alimento desejado basta digitar o tempo desejado do alimento no microondas e enseguida clicar em "ligar microondas"
+a resposta para o problema vai aparecer no campo de "resultado" de acordo com os casos solicitados no enunciado.
