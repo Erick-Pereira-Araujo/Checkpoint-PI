@@ -45,8 +45,11 @@
 function calcular(tipoalimento) {
    var tempodesejado = document.calcform.tempodesejado.value;
    if (tipoalimento == "pipoca") {
-
-      var res = parseInt(tempodesejado);
+      if(tempodesejado >= 20){
+         var res = "Alimento Queimou";
+      }else if(tempodesejado < 10){
+         var res = "Tempo Insuficiente";
+      }
    } else if (tipoalimento == "macarrao") {
       tempoalimento = 8;
       var res = tempodesejado;
@@ -67,6 +70,15 @@ function calcular(tipoalimento) {
 
 </head>
 <body>
+   <h1>Microondas</h1>
+   <p>Lista de codigos para cada alimento no menu e seus tempos padrões</p>
+     <ol>
+        <li>Pipoca – 10 segundos</li>
+        <li>Macarrão – 8 segundos</li>
+        <li>Carne – 15 segundoss</li>
+        <li>Feijão – 12 segundos</li>
+        <li>Brigadeiro – 8 segundos</li>
+     </ol>
     <form name="calcform" method="post" action="">
         <fieldset>
            <legend>Microondas</legend>
@@ -90,14 +102,6 @@ function calcular(tipoalimento) {
            <input type="button" value="Calcular" class="botao" onClick="calcular(document.calcform.tipoalimento.value)"/>
         </fieldset>
      </form>
-
-     <ol>
-        <li>Pipoca – 10 segundos</li>
-        <li>Macarrão – 8 segundos</li>
-        <li>Carne – 15 segundoss</li>
-        <li>Feijão – 12 segundos</li>
-        <li>Brigadeiro – 8 segundos</li>
-     </ol>
      
     </body>
     </html>
